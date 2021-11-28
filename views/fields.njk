@@ -1,0 +1,39 @@
+<div class="field">
+  <label for="course-title">Título do curso</label>
+  <input placeholder="Título do curso" type="text" name="title" id="course-title" value={{course.title}}>
+</div>
+
+<div class="field">
+  <label for="course-description">Descrição</label>
+  <textarea placeholder="Descrição do curso" name="description" id="course-description" cols="30">{{course.description}}</textarea>
+</div>
+
+<div class="field">
+  <label for="course-image">URL da imagem</label>
+  <input placeholder="https://" type="text" name="image" id="course-image" value="{{course.image}}">
+</div>
+
+<div class="field">
+  <label for="course-instructor">instrutor</label>
+  <input placeholder="Nome do instrutor" type="text" name="instructor" id="course-instructor" value="{{course.instructor}}">
+</div>
+
+<div class="field">
+  <label for="course-links">Links para as aulas</label>
+
+  {% if course %}
+    <div id="links">
+    {% for link in course.links%}
+        <input placeholder="Link da aula" type="text" name="links[]" class="input-link" value="{{link}}">
+    {% endfor%}
+    </div>
+  {% else %}
+    <div id="links">
+      <input placeholder="Link da aula" type="text" name="links[]" class="input-link">
+    </div>
+  {% endif %}
+
+
+  <button type="button" id="add-link">Adicionar Link</button>
+</div>
+

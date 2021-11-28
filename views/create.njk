@@ -1,0 +1,12 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class="card">
+    <h3 class="card-title">Criar curso</h3>
+    <form action="/courses" method="POST">
+      {% include "fields.njk"%}
+
+      <button class="btn primary" type="submit">Salvar curso</button>
+    </form>
+  </div>
+{% endblock %}

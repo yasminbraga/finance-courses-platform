@@ -1,0 +1,22 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class="card">
+    <h3 class="card-title">Editar curso</h3>
+    <form action="/courses?_method=PUT" method="POST">
+      {% include "fields.njk"%}
+
+      <input type="hidden" name="id" value={{course.id}}>
+
+      <button class="btn primary" type="submit">Salvar curso</button>
+    </form>
+
+    <form action="/courses?_method=DELETE" method="POST">
+      <input type="hidden" name="id" value={{course.id}}>
+
+      <button class="btn delete" type="submit">Deletar curso</button>
+    </form>
+
+
+  </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <div class="card show-page">
+    <img src={{course.image}} alt="image">
+    <h2>{{course.title}}</h2>
+    <span>Instrutor: {{course.instructor}}</span>
+
+    <div class="description-section">
+      <h3>Descrição</h3>
+      <p>{{course.description}}</p>
+    </div>
+    <div class="links">
+      <h3>Link das aulas</h3>
+      {% for link in course.links %}
+        <a href="{{link}}">{{link}}</a>
+      {% endfor %}
+    </div>
+    <button class="btn primary">
+      <a href="/courses/edit/{{course.id}}">Editar curso</a>
+    </button>
+
+  </div>
+{% endblock %}
